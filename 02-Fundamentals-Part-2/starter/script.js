@@ -91,6 +91,7 @@ function fruitProcessor(apples, oranges) {
 console.log(fruitProcessor(2, 3));
 */
 
+/*
 const calcAge = function (birthYear) {
     return 2037 - birthYear;
 }
@@ -108,4 +109,30 @@ const yearsUntilRetirement = function (birthYear, firstName) {
 }
 console.log(yearsUntilRetirement(1991, 'Stephen'));
 console.log(yearsUntilRetirement(1970, 'Mike'));
+*/
 
+// Coding challenge #1
+// Function to calculate average of 3 scores
+const calcAverage = (a, b, c) => (a + b + c) / 3;
+
+function checkWinner(avgDolphins, avgKoalas) {
+    if (avgDolphins >= 2 * avgKoalas) {
+        console.log(`Dolphins win (${avgDolphins} vs ${avgKoalas})`);
+    } else if (avgKoalas >= 2 * avgDolphins) {
+        console.log(`Koalas win (${avgKoalas} vs ${avgDolphins})`);
+    } else {
+        console.log('No team wins');
+    }
+}
+
+// Test 1 - Calculate the average score for each team
+let dolphinsAvgScore = calcAverage(44, 23, 71);
+let koalasAvgScore = calcAverage(65, 54, 49);
+
+checkWinner(dolphinsAvgScore, koalasAvgScore);
+
+// Test 2 - Calculate the average score for each team
+dolphinsAvgScore = calcAverage(85, 54, 41);
+koalasAvgScore = calcAverage(23, 34, 27);
+
+checkWinner(dolphinsAvgScore, koalasAvgScore);
