@@ -147,6 +147,7 @@ checkWinner(dolphinsAvgScore, koalasAvgScore);
 // Arrays
 // *********************
 
+/*
 // Create an array
 const friends = ['Michael', 'Steve', 'Peter'];
 console.log(friends);
@@ -189,4 +190,40 @@ console.log(age1, age2, age3);
 
 const ages = [calcAge(years[0]), calcAge(years[1]), calcAge(years[years.length - 1])];
 console.log(ages);
+*/
 
+const friends = ['Michael', 'Steven', 'Peter'];
+
+// Add an element to the end of an array
+friends.push('Jay');
+
+// the push method can also return the new length so could use 
+const newLength = friends.push('Michelle');
+
+console.log(friends);
+console.log(newLength);
+
+// Add an element to the begining of an array, also returns the new length
+friends.unshift('John');
+console.log(friends);
+
+// Remove elements
+friends.pop(); // remove the last element of an array, returns the value of the element removed
+const popped = friends.pop();
+console.log(friends);
+console.log(popped);
+
+friends.shift(); // Remove the first element of an array, also returns the value of element removed
+console.log(friends);
+
+// Find the position of a value in the array
+console.log(friends.indexOf('Steven'));
+console.log(friends.indexOf('Bob')); // Returns -1 if not found
+
+// Check if a value is in the array, returns true or false
+console.log(friends.includes('Steven'));
+console.log(friends.includes('Bob'));
+
+if (friends.includes('Peter')) {
+    console.log('You have a friend called Peter');
+}
