@@ -232,7 +232,7 @@ if (friends.includes('Peter')) {
 */
 
 // Coding challenge #2
-
+/*
 const calcTip = function (bill) {
     const tip = bill >= 50 && bill <= 300 ? bill * .15 : bill * .20;
     return tip;
@@ -249,4 +249,47 @@ console.log(tips);
 
 const totals = [bills[0] + tips[0], bills[1] + tips[1], bills[2] + tips[2]];
 console.log(totals);
+*/
 
+// *********************
+// Objects
+// *********************
+
+// This object has 5 properties (firstName, lastName, age, job, friends)
+// Object literal syntax
+const stephen = {
+    firstName: 'Stephen',
+    lastName: 'Johnson',
+    age: 2021 - 1971,
+    job: 'Developer',
+    friends: ['Michael', 'Peter', 'Steven']
+};
+
+console.log(stephen);
+
+// Can use dot or brackets to retrieve the relevant property from the object
+console.log(stephen.lastName);
+console.log(stephen['lastName']);
+
+// Using the bracket option allows use of expressions
+const nameKey = 'Name';
+console.log(stephen['first' + nameKey]);
+console.log(stephen['last' + nameKey]);
+
+const interestedIn = prompt('What do you want to know about Stephen? Choose between firstName, lastName, age, job and friends');
+
+if (stephen[interestedIn]) {
+    console.log(interestedIn);
+    console.log(stephen[interestedIn]);
+} else {
+    console.log('Wrong request');
+}
+
+// Add properties to an object
+stephen.location = 'Chesterfield';
+stephen['email'] = 'stephen.a.johnson@me.com';
+console.log(stephen);
+
+// Challenge
+// "Stephen has 3 friends, and his best friend is called Michael"
+console.log(stephen.firstName + ' has ' + stephen.friends.length + ' and his best friend is called ' + stephen.friends[0]);
