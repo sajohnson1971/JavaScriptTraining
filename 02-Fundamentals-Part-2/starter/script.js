@@ -192,12 +192,13 @@ const ages = [calcAge(years[0]), calcAge(years[1]), calcAge(years[years.length -
 console.log(ages);
 */
 
+/*
 const friends = ['Michael', 'Steven', 'Peter'];
 
 // Add an element to the end of an array
 friends.push('Jay');
 
-// the push method can also return the new length so could use 
+// the push method can also return the new length so could use
 const newLength = friends.push('Michelle');
 
 console.log(friends);
@@ -227,3 +228,25 @@ console.log(friends.includes('Bob'));
 if (friends.includes('Peter')) {
     console.log('You have a friend called Peter');
 }
+
+*/
+
+// Coding challenge #2
+
+const calcTip = function (bill) {
+    const tip = bill >= 50 && bill <= 300 ? bill * .15 : bill * .20;
+    return tip;
+}
+
+console.log(calcTip(100));
+console.log(calcTip(1000));
+
+const bills = [125, 555, 44];
+console.log(bills);
+
+const tips = [calcTip(bills[0]), calcTip(bills[1]), calcTip(bills[2])]
+console.log(tips);
+
+const totals = [bills[0] + tips[0], bills[1] + tips[1], bills[2] + tips[2]];
+console.log(totals);
+
