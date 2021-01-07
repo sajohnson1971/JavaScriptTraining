@@ -391,7 +391,7 @@ console.log(stephen.getSummary());
 */
 
 // Coding challenge #3
-
+/*
 const mark = {
     fullName: 'Mark Miller',
     mass: 78,
@@ -423,4 +423,13 @@ if (mark.BMI > john.BMI) {
     console.log(`${mark.fullName}'s BMI (${mark.BMI}) is higher than ${john.fullName}'s BMI (${john.BMI})`);
 } else if (john.BMI > mark.BMI) {
     console.log(`${john.fullName}'s BMI (${john.BMI}) is higher than ${mark.fullName}'s BMI (${mark.BMI})`);
+}
+*/
+
+// **************
+// FOR loop
+// **************
+
+for (let rep = 1; rep <= 10; rep++) {
+    console.log(`Lifting heavy weights repetition ${rep} 🏋️‍♀️`);
 }
