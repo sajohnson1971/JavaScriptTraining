@@ -255,6 +255,7 @@ console.log(totals);
 // Objects
 // *********************
 
+/*
 // This object has 5 properties (firstName, lastName, age, job, friends)
 // Object literal syntax
 const stephen = {
@@ -293,3 +294,97 @@ console.log(stephen);
 // Challenge
 // "Stephen has 3 friends, and his best friend is called Michael"
 console.log(stephen.firstName + ' has ' + stephen.friends.length + ' and his best friend is called ' + stephen.friends[0]);
+*/
+
+
+// *****************
+// Object Methods
+// *****************
+
+// Any function attached to an object is called a method
+// Needs to be an expression function
+
+/*
+const stephen = {
+    firstName: 'Stephen',
+    lastName: 'Johnson',
+    birthYear: 1971,
+    job: 'Developer',
+    friends: ['Michael', 'Peter', 'Steven'],
+    hasDriversLicense: true,
+
+    calcAge: function (birthYear) {
+        return 2021 - birthYear;
+    }
+};
+
+// Both these return the same value
+console.log(stephen.calcAge(1971));    // dot notaion
+console.log(stephen['calcAge'](1971)); // bracket notation
+
+console.log(stephen.calcAge(stephen.birthYear));
+
+*/
+
+/*
+
+// Can use THIS to access an object value within the function
+const stephen = {
+    firstName: 'Stephen',
+    lastName: 'Johnson',
+    birthYear: 1971,
+    job: 'Developer',
+    friends: ['Michael', 'Peter', 'Steven'],
+    hasDriversLicense: true,
+
+    calcAge: function () {
+        console.log(this);
+        return 2021 - this.birthYear;
+    }
+};
+
+console.log(stephen.calcAge());
+
+*/
+
+/*
+// This will create a new property called age on the object so that if called multiple times it does not need to be recalculated
+const stephen = {
+    firstName: 'Stephen',
+    lastName: 'Johnson',
+    birthYear: 1971,
+    job: 'Developer',
+    friends: ['Michael', 'Peter', 'Steven'],
+    hasDriversLicense: true,
+
+    calcAge: function () {
+        this.age = 2021 - this.birthYear;
+        return this.age;
+    }
+};
+
+console.log(stephen.calcAge());
+console.log(stephen.age);
+*/
+
+// Challenge
+
+const stephen = {
+    firstName: 'Stephen',
+    lastName: 'Johnson',
+    birthYear: 1971,
+    job: 'Developer',
+    friends: ['Michael', 'Peter', 'Steven'],
+    hasDriversLicense: false,
+
+    calcAge: function () {
+        this.age = 2021 - this.birthYear;
+        return this.age;
+    },
+
+    getSummary: function () {
+        return `${this.firstName} is a ${this['calcAge']()}-year old ${this.job} and he has ${this.hasDriversLicense ? 'a' : 'no'} driver's license`;
+    }
+};
+
+console.log(stephen.getSummary());
