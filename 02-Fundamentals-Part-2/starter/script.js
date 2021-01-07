@@ -430,6 +430,74 @@ if (mark.BMI > john.BMI) {
 // FOR loop
 // **************
 
+/*
 for (let rep = 1; rep <= 10; rep++) {
     console.log(`Lifting heavy weights repetition ${rep} 🏋️‍♀️`);
+}
+*/
+
+/*
+// Define an array
+const stephenArray = [
+    'Stephen',
+    'Johnson',
+    2021 - 1971,
+    'developer',
+    ['Michael', 'Peter', 'Steven'],
+    true
+];
+
+const types1 = []; // Create an empty array
+const types2 = []; // Create an empty array
+
+// Start from zero for arrays
+for (let i = 0; i < stephenArray.length; i++) {
+    // display the array value and it's type
+    console.log(stephenArray[i], typeof stephenArray[i]);
+
+    // Populate the types1 array at current i position
+    types1[i] = typeof stephenArray[i];
+
+    // Populate the types2 array at the end of types2 by using push
+    types2.push(typeof stephenArray[i]);
+}
+
+console.log(types1);
+console.log(types2);
+
+const years = [1991, 2007, 1969, 2020];
+const ages = [];
+
+for (let i = 0; i < years.length; i++) {
+    ages.push(2021 - years[i]);
+}
+
+console.log(ages);
+*/
+
+// ****************** 
+// continue and break
+// ******************
+
+const stephenArray = [
+    'Stephen',
+    'Johnson',
+    2021 - 1971,
+    'developer',
+    ['Michael', 'Peter', 'Steven'],
+    true
+];
+
+for (let i = 0; i < stephenArray.length; i++) {
+    if (typeof stephenArray[i] !== 'string') continue;
+
+    // Will only output if array value is a string
+    console.log(stephenArray[i], typeof stephenArray[i]);
+}
+
+for (let i = 0; i < stephenArray.length; i++) {
+    if (typeof stephenArray[i] === 'number') break;
+
+    // Will only output if array value is a string
+    console.log(stephenArray[i], typeof stephenArray[i]);
 }
