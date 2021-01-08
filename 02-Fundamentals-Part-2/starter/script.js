@@ -479,6 +479,7 @@ console.log(ages);
 // continue and break
 // ******************
 
+/*
 const stephenArray = [
     'Stephen',
     'Johnson',
@@ -498,6 +499,30 @@ for (let i = 0; i < stephenArray.length; i++) {
 for (let i = 0; i < stephenArray.length; i++) {
     if (typeof stephenArray[i] === 'number') break;
 
-    // Will only output if array value is a string
+    // Will only output array values until a number value is read
     console.log(stephenArray[i], typeof stephenArray[i]);
+}
+*/
+
+// Loop backwards
+
+const stephen = [
+    'Stephen',
+    'Johnson',
+    2021 - 1971,
+    'developer',
+    ['Michael', 'Peter', 'Steven']
+];
+
+for (let i = stephen.length - 1; i >= 0; i--) {
+    console.log(stephen[i]);
+}
+
+// Loop within a loop
+
+for (let excercise = 1; excercise < 4; excercise++) {
+    console.log(`-------- Starting excercise ${excercise}`);
+    for (let rep = 1; rep < 6; rep++) {
+        console.log(`Lifting weight repetition ${rep}`);
+    }
 }
