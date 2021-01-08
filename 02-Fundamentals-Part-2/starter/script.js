@@ -529,7 +529,7 @@ for (let excercise = 1; excercise < 4; excercise++) {
 */
 
 // The WHILE Loop
-
+/*
 let rep = 1;
 while (rep <= 10) {
     console.log(`In a while loop: rep ${rep}`);
@@ -544,3 +544,32 @@ while (dice !== 6) {
     dice = Math.trunc(Math.random() * 6) + 1;
     if (dice === 6) console.log('Loop about to end...');
 }
+*/
+
+// Challenge 4
+const bills = [22, 295, 176, 440, 37, 105, 10, 1100, 86, 52];
+const tips = [];
+const totals = [];
+
+const calcTip = function (bill) {
+    const tip = bill >= 50 && bill <= 300 ? bill * .15 : bill * .20;
+    return tip;
+}
+
+for (let i = 0; i < bills.length; i++) {
+    tips.push(calcTip(bills[i]));
+    totals.push(bills[i] + tips[i]);
+    console.log(`${i} - The bill is ${bills[i]}. The tip is ${tips[i]} and the total is ${totals[i]}`);
+}
+
+function calcAverage(arr) {
+    let sum = 0;
+    for (let i = 0; i < arr.length; i++) {
+        sum += arr[i];
+    }
+    return sum / arr.length;
+}
+
+const totalsAverage = calcAverage(totals);
+console.log(`The totals average is ${totalsAverage}`);
+console.log(`The tips average is ${calcAverage(tips)}`);
