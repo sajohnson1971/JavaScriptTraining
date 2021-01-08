@@ -505,7 +505,7 @@ for (let i = 0; i < stephenArray.length; i++) {
 */
 
 // Loop backwards
-
+/*
 const stephen = [
     'Stephen',
     'Johnson',
@@ -525,4 +525,22 @@ for (let excercise = 1; excercise < 4; excercise++) {
     for (let rep = 1; rep < 6; rep++) {
         console.log(`Lifting weight repetition ${rep}`);
     }
+}
+*/
+
+// The WHILE Loop
+
+let rep = 1;
+while (rep <= 10) {
+    console.log(`In a while loop: rep ${rep}`);
+    rep++;
+}
+
+// Generate a random number between 1 and 6 and loop until a 6 is rolled
+let dice = Math.trunc(Math.random() * 6) + 1;
+while (dice !== 6) {
+    console.log(`You rolled a ${dice}`);
+    // Generate next random number
+    dice = Math.trunc(Math.random() * 6) + 1;
+    if (dice === 6) console.log('Loop about to end...');
 }
