@@ -101,9 +101,9 @@ if (age >= 18) {
 // AND, OR and NOT OPERATORS
 // **********
 
-// &&
-// ||
-// !
+// AND = &&
+// OR  = ||
+// NOT = !
 
 // **********
 // Equality operators
