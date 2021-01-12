@@ -187,6 +187,7 @@ friends[2] = 'Jay';
 // shift     - Remove the first element of an array
 // indexof   - Find the position of a value in the array
 // includes  - Check if a value is in the array
+// concat    - Merge arrays
 // **********
 
 // Add an element to the end of an array
@@ -215,6 +216,12 @@ console.log(friends.includes('Bob'));
 if (friends.includes('friend 1')) {
     console.log('You have a friend called friend 1');
 }
+
+// Merge two arrays
+const array1 = ['a', 'b', 'c'];
+const array2 = ['d', 'e', 'f'];
+const array3 = array1.concat(array2);
+console.log(array3);
 
 // **********
 // OBJECTS
@@ -359,14 +366,14 @@ for (let i = stephen.length - 1; i >= 0; i--) {
 // The WHILE Loop
 // **********
 
-// Can use this instead of a FOR loop, like so
+// Can use WHILE instead of a FOR loop, like so
 let rep = 1;
 while (rep <= 10) {
     console.log(`In a while loop: rep ${rep}`);
     rep++;
 }
 
-// Alternatively, Use this when you don't know how long to loop for
+// Alternatively, Use WHILE when you don't know how long to loop for
 // Generate a random number between 1 and 6 and loop until a 6 is rolled
 let dice = Math.trunc(Math.random() * 6) + 1;
 while (dice !== 6) {
@@ -375,3 +382,51 @@ while (dice !== 6) {
     dice = Math.trunc(Math.random() * 6) + 1;
     if (dice === 6) console.log('Loop about to end...');
 }
+
+
+// ***************************************
+
+// PROBLEM 1:
+// We work for a company building a smart home thermometer. Our most recent task is this: "Given an array of temperatures of one day, calculate the temperature amplitude. Keep in mind that sometimes there might be a sensor error."
+
+const temperatures = [3, -2, -6, -1, 'error', 9, 13, 17, 15, 14, 9, 5];
+
+// 1) Understanding the problem
+// - What is temp amplitude? Answer: difference between highest and lowest temp
+// - How to compute max and min temperatures?
+// - What's a sensor error? And what to do?
+
+// 2) Breaking up into sub-problems
+// - How to ignore errors?
+// - Find max value in temp array
+// - Find min value in temp array
+// - Subtract min from max (amplitude) and return it
+
+const calcTempAmplitude = function (temps) {
+  
+  // Set max and min variables to first element of the array
+  let max = temps[0];
+  let min = temps[0];
+  
+  // Loop through each value in the array
+  for (let i = 0; i < temps.length; i++) {
+    
+    const currTemp = temps[i];
+    
+    // If the value is not a number then skip to next iteration
+    if (typeof currTemp !== 'number') continue;
+    
+    // If array current value is greater than max then update max
+    if (currTemp > max) max = currTemp;
+    
+    // If array current value is lower than min then update min
+    if (currTemp < min) min = currTemp;
+
+  }
+  console.log(`Max temp ${max}`, `Min temp ${min}`);
+  // Return the amplitude
+  return max - min;
+};
+
+const amplitude = calcTempAmplitude(temperatures);
+console.log(amplitude);
